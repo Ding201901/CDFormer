@@ -4,6 +4,10 @@ Code for the paper ["CDFormer: A Hyperspectral Image Change Detection Method Bas
 
 ![CDFormer](./CDFormer.jpg)
 
+## Data
+
+The datasets can be found in https://rslab.ut.ac.ir/data
+
 ## Citation
 
 Please kindly cite the papers if this code is useful and helpful for your research.
