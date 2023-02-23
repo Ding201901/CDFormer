@@ -143,10 +143,8 @@ if __name__ == "__main__":
     for search in range(0, max_search):
         params, config = parse_args(search)
         set_seed(config['seed'])
-        print(params["test_ratio"])
         acc, kappa = main(search_num = search + 1, **config)
-
-        params['search_num'] = search
+        params['search_num'] = search + 1
         temp = list(params.values())
         temp.append(acc)
         temp.append(kappa)
