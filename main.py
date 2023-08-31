@@ -48,7 +48,6 @@ def main(dataset, lr, n_head, n_layers, batch_size, patch_size, epochs, n_classe
             # updata mymodel
             loss.backward()
             optimizer.step()
-            schedule.step()
             optimizer.zero_grad()
 
             # log
@@ -58,6 +57,7 @@ def main(dataset, lr, n_head, n_layers, batch_size, patch_size, epochs, n_classe
                 accuracy = f"{batch_accuracy:.4f}",
                 step = idx + 1,
             )
+        schedule.step()
 
         # do validation
         pbar.close()
@@ -129,7 +129,7 @@ def parse_args(num):
         "lr": 1e-4,
         "epochs": 50,
         "n_classes": 4,
-        "warmup_steps": 2,
+        "warmup_steps": 0,
         "save_epochs": 10,
         "out_dir": './exp_result'
     }
